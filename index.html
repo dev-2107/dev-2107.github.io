@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1С программирование</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="head">
+        <div class="logos">
+            <img src="images/Logos.png" alt="Logos" height="100" align="left" hspace="10">
+        </div>
+    </div>
+    <div class="menu" title="Меню">
+        <div id="alfa">Кнопка1</div>
+        <div>Кнопка2</div>
+        <div>Кнопка3</div>
+        <div>Кнопка4</div>
+        <div>Кнопка5</div>
+    </div>
+    <hr>
+    <div class="text">
+        <p>
+            <h1>Программирование в 1С</h1>
+            <em>Добро пожаловать на сайт! Буду рад оказать услуги автоматизации ваших бизнес-процессов. Главным инструментом для этого является у меня 1С8 на простых формах. Почему именно 1С8? 1С8 является своеобразной СУБД и визуальной средой программирования одновременно, что делает этот инструмент наиболее простым и удобным. Есть еще 1С7, но эта среда разработки немного устарела и уже не развивается. Но главное преимущество 1С8 перед 1С7 — это то, что многие вещи реализуются в 1С8 намного быстрее и проще. Почему же именно на простых (обычных) формах? Это достаточно подробно объясняется в <a href="https://habr.com/ru/post/344616/">статье</a> (ищите там «13. Клиент серверное взаимодействие.» и ниже). На странице <a href="html/portfolio.html">Портфолио</a> можете познакомиться с последними проектами.</em>
+        </p>
+        <p>
+            <h2>Контакты // <em>ИП Кудрицкий Сергей Арсеньевич</em></h2>
+            <ul>
+                <li>Telegram, Viber, WhatsApp: <a href="tel:+375298905721"><strong>+375 (29) 890-57-21</strong></a></li>
+                <li>e-mail: <a href="mailto:vdv-103@yandex.ru"><strong>vdv-103@yandex.ru</strong></a></li>
+                <li>skype: <strong>air-271</strong></li>
+            </ul>
+        </p>
+        <p>
+            <caption>Теперь рассмотрим организационные вопросы нашего возможного сотрудничества:</caption>
+            <ol>
+                <li>На форме ниже оставляете заявку с кратким описанием сути задачи. Также можете запросить обратный звонок или сами позвонить в рабочее время. При отправке заявки вы будете автоматически зарегистрированы на сайте с уведомлением на email. Если не находите уведомление, то проверьте спам.</li>
+                <li>Анализирую вашу заявку, предлагаю возможные пути решения, прикидываю затраты по времени и стоимость. В зависимости от условий и сложности заказа, <strong>тариф составляет от 450 до 550 RUB</strong>. Составляю для вас коммерческое предложение.</li>
+                <li>Если согласны, то на странице <a href="">Проекты</a> (видна только зарегистрированным пользователям) размещаю ваш проект (этот проект будет доступен только вам), делаю более детальное техническое задание с разбивкой на отдельные задачи и даю ссылку на google-таблицу с ТЗ для согласования (размещена в карточке проекта). Техническое задание выполняет роль договора — это основной документ проекта.</li>
+                <li>После согласования приступаю к выполнению проекта. Реализовываю определенный этап, вы проверяете. Если ошибок нет, то на странице <a href="">Проекты</a> делаете заказ с указанием затраченных на работу часов и оплачиваете его. Оплата счета означает, что вы проверили указанные в ТЗ задачи и претензий нет. По взаимному согласию возможна доработка ТЗ. Так шаг за шагом идет реализация проекта.</li>
+                <li>Обращаю внимание на переключатель валют с флагом в правой колонке сайта: перед тем как нажать кнопку «Подтвердить заказ» флаг должен быть российский, чтобы автоматически пересчитать сумму платежа в RUB.</li>
+            </ol>
+        </p>
+        <p>
+            <form action="">
+                <input type="text" value="Имя" title="Имя*"> <input type="text" value="Фамилия" title="Фамилия*"> <input type="email" value="vdv-103@yandex.ru" title="Ваш e-mail*">
+                <p>
+                    <select title="Тема*">
+                        <option value="">Заявка</option>
+                        <option value="">Помощь</option>
+                        <option value="">Запрос на возврат платежа</option>
+                    </select>
+                </p>
+                <p>
+                    <textarea name="" id="" cols="30" rows="10" title="Сообщение*"></textarea>
+                </p>
+                <p>
+                    <button>Отправить</button>
+                </p>
+            </form>
+        </p>
+    </div>
+
+    <script>
+        function httpRequest(url)
+        {
+            let order = {
+                'userName': 'vortex1c.by-api',
+                'password': 'dX3U8ldw',
+                'orderNumber': 'test_20230220_1315',
+                'amount': 5000,
+                'returnUrl': 'https://vortex1c.by' 
+            };
+
+            let options = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json;charset=utf-8'},
+                body: JSON.stringify(order)
+            };
+
+            let response = fetch(url, options);
+
+            return response.json();
+        }
+
+        let order = {
+            'userName': 'vortex1c.by-api',
+            'password': 'dX3U8ldw',
+            'orderNumber': 'test_20230220_1315',
+            'amount': 5000,
+            'returnUrl': 'https://vortex1c.by' 
+        };
+
+        let options = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(order)
+        };
+        
+        let response = fetch('https://web.rbsuat.com/ab_by', options);
+
+        alfa.onclick = function(e) {
+            // let result = httpRequest('https://web.rbsuat.com/ab_by/rest/');
+            console.log(options);
+        }
+    </script>
+</body>
+</html>
